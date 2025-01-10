@@ -22,7 +22,12 @@ To setup application:
    
    .\venv_web_app\Scripts\activate
 
-5. Run the flask app
+4. Run the flask app
 
    
    flask run
+
+
+5. Test the APIs
+
+   To test the APIs, you can import the Postman collection provided.
