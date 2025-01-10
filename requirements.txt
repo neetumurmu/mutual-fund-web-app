@@ -1,0 +1,6 @@
+Flask
+Flask-SQLAlchemy>=3.0.1
+requests
+python-dotenv
+Flask-JWT-Extended
+Werkzeug==2.2.2
