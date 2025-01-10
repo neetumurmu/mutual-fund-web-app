@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "8017995e-cc25-488b-8a69-fba8bdbf651b",
+		"name": "Mutual Fund Web App APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31883677",
+		"_collection_link": "https://winter-zodiac-663364.postman.co/workspace/New-Team-Workspace~04908d61-5af5-46e2-9086-14dc936ba6f9/collection/31883677-8017995e-cc25-488b-8a69-fba8bdbf651b?action=share&source=collection_link&creator=31883677"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/health",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"neetu1@gmail.com\",\n  \"password\": \"123451\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/register",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"neetu1@gmail.com\",\n  \"password\": \"123451\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "funds",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczNjUxMjY1MiwianRpIjoiMDdiNTUyNjgtMDQ3YS00N2EzLWEwYjAtYWE5M2IxMTYzZjA3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3MzY1MTI2NTIsImV4cCI6MTczNjUxNjI1Mn0.QOH3Ja0Qtmz8IiuTlpUkbHHwrB3DhXbGu0MYcbQo2Z8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/funds?fund_family=SBI Mutual Fund",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"funds"
+					],
+					"query": [
+						{
+							"key": "fund_family",
+							"value": "SBI Mutual Fund",
+							"description": "\nPossible fund familes = [\n    \"HDFC Mutual Fund\",\n    \"SBI Mutual Fund\",\n    \"ICICI Prudential Mutual Fund\",\n    \"Axis Mutual Fund\",\n    \"Nippon India Mutual Fund\",\n    \"Kotak Mutual Fund\",\n    \"Aditya Birla Sun Life Mutual Fund\",\n    \"UTI Mutual Fund\",\n    \"Mirae Asset Mutual Fund\",\n    \"Tata Mutual Fund\",\n    \"DSP Mutual Fund\",\n    \"IDFC Mutual Fund\",\n    \"L&T Mutual Fund\",\n    \"Franklin Templeton Mutual Fund\",\n    \"Motilal Oswal Mutual Fund\",\n    \"Parag Parikh Mutual Fund\",\n    \"Sundaram Mutual Fund\",\n    \"Canara Robeco Mutual Fund\",\n    \"Mahindra Manulife Mutual Fund\",\n]\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add fund in portfolio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczNjQxNjUwMCwianRpIjoiNjdkMGEyY2YtMzg3OC00YmRmLWIwMmEtZThlYmFkNjZmYjMyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3MzY0MTY1MDAsImV4cCI6MTczNjQ1MjUwMH0.N4N8heh8-iOIUZ-HvJViByn1LMR04dkU8gbkxruUsVc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fund_family\": \"SBI\",\n    \"fund_name\": \"SBI Equity Growth Fund\",\n    \"units\": 25.75,\n    \"investment_value\": 72000.50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/portfolio/funds",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"portfolio",
+						"funds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Portfolio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczNjUxMDY0OCwianRpIjoiOTg4ODMxNWMtOTQ1Zi00YjQzLTk4NjktMzk1YWUzMmI1MjdiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3MzY1MTA2NDgsImV4cCI6MTczNjU0NjY0OH0.NmmI6xtEB5l6f00HatWhDfa2LoDzPHVw3NkBwL8Qwy4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/portfolio",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"portfolio"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
